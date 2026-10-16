@@ -1,5 +1,5 @@
 // URL вебхука n8n — друг вставит сюда production URL из Webhook-ноды
-const WEBHOOK_URL = 'https://n8n.YOUR-DOMAIN/webhook/agently-lead';
+const WEBHOOK_URL = 'https://qeenek.space/webhook/agently-lead';
 
 const form = document.getElementById('lead-form');
 const statusEl = form.querySelector('.form__status');
