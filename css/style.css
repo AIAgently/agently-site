@@ -161,6 +161,13 @@ p { margin: 0; }
 @media (max-width: 480px) {
   .steps { grid-template-columns: 1fr; }
 }
+
+/* Команда в подвале */
+.footer__row { align-items: center; flex-wrap: wrap; }
+.footer__team { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
+.footer__team span { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 600; color: var(--accent); }
+.footer__team a { color: #eef3ef; text-decoration: none; font-weight: 500; }
+.footer__team a:hover { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn { transition: none; }
