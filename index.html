@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>agently — боты и мини-приложения для бизнеса</title>
+  <meta name="description" content="Автоматизируем малый бизнес: боты на n8n, Telegram Mini Apps, запись клиентов, оплаты, заявки в мессенджерах.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap header__row">
+    <a href="#" class="logo">agently<span>.</span></a>
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#process">Как работаем</a>
+      <a href="#contact" class="nav__cta">Оставить заявку</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow">Автоматизация для малого бизнеса</p>
+        <h1>Заявки, запись и оплаты работают сами, пока вы заняты делом</h1>
+        <p class="lead">Делаем ботов на n8n и мини-приложения в Telegram. Клиент пишет в мессенджер, а вы получаете готовую заявку со всеми деталями.</p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary">Обсудить задачу</a>
+          <a href="#cases" class="btn btn--ghost">Посмотреть кейсы</a>
+        </div>
+      </div>
+
+      <!-- Макет чата: показывает, что делает бот -->
+      <div class="chat" aria-label="Пример диалога с ботом">
+        <div class="chat__head">
+          <span class="chat__avatar">a</span>
+          <div><b>Бот студии</b><small>онлайн</small></div>
+        </div>
+        <div class="msg msg--in">Здравствуйте! Хочу забронировать зал на субботу</div>
+        <div class="msg msg--out">Конечно. Какой зал и на сколько человек?</div>
+        <div class="msg msg--in">Семейный, нас четверо, часа на два</div>
+        <div class="msg msg--out">Записал. Передаю администратору, он подтвердит время в течение 15 минут ✓</div>
+        <div class="chat__ticket">
+          <small>Заявка → группа администраторов</small>
+          <b>Семейный зал · сб · 4 чел · 2 ч</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="wrap">
+      <h2>Что делаем</h2>
+      <div class="services">
+        <article class="service">
+          <p class="tag">n8n</p>
+          <h3>Боты и автоматизация</h3>
+          <p>Бот в Telegram, ВКонтакте, MAX или WhatsApp собирает заявку, отвечает на частые вопросы с помощью ИИ и передаёт клиента администратору.</p>
+          <ul>
+            <li>Приём и разбор заявок</li>
+            <li>Уведомления команде</li>
+            <li>Связка с таблицами и CRM</li>
+          </ul>
+        </article>
+        <article class="service">
+          <p class="tag">Telegram Mini Apps</p>
+          <h3>Мини-приложения в Telegram</h3>
+          <p>Полноценное приложение внутри Telegram: клиенту ничего не нужно скачивать.</p>
+          <ul>
+            <li>Онлайн-запись с выбором времени</li>
+            <li>Меню или каталог с корзиной</li>
+            <li>Личный кабинет и бонусы</li>
+          </ul>
+        </article>
+        <article class="service">
+          <p class="tag">Платежи</p>
+          <h3>Приём оплат</h3>
+          <p>Оплата через ЮKassa прямо в боте. После оплаты клиент сразу получает то, за что заплатил: доступ, запись или подтверждение.</p>
+          <ul>
+            <li>Разовые платежи и подписки</li>
+            <li>Доступ в закрытые каналы</li>
+            <li>Чеки и уведомления</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="section section--alt">
+    <div class="wrap">
+      <h2>Кейсы</h2>
+      <div class="cases">
+        <article class="case">
+          <p class="tag">Фотостудия</p>
+          <h3>Бот, который принимает заявки на бронирование</h3>
+          <p>Клиенты пишут в Telegram, ВКонтакте, MAX, WhatsApp или в виджет на сайте. Бот уточняет зал, дату и количество гостей, собирает заявку и отправляет её в группу администраторов.</p>
+          <p class="case__stack">n8n · ИИ-ассистент · 4 мессенджера</p>
+        </article>
+        <article class="case">
+          <p class="tag">Автор закрытого канала</p>
+          <h3>Продажа доступа в канал через бота</h3>
+          <p>Клиент оплачивает через ЮKassa и сразу получает одноразовую ссылку-приглашение. Автору не нужно вручную проверять платежи и добавлять людей.</p>
+          <p class="case__stack">Telegram-бот · ЮKassa · одноразовые ссылки</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section">
+    <div class="wrap">
+      <h2>Как работаем</h2>
+      <ol class="steps">
+        <li><b>Созвон</b><span>Разбираем, где вы теряете время и клиентов.</span></li>
+        <li><b>Предложение</b><span>Описываем решение, сроки и стоимость.</span></li>
+        <li><b>Запуск</b><span>Собираем, тестируем на ваших сценариях, запускаем.</span></li>
+        <li><b>Поддержка</b><span>Дорабатываем по мере роста бизнеса.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" class="section section--dark">
+    <div class="wrap contact">
+      <div>
+        <h2>Расскажите о задаче</h2>
+        <p>Ответим в Telegram в течение дня и предложим, что можно автоматизировать.</p>
+        <p class="contact__direct">Или напишите напрямую: <a href="https://t.me/USERNAME">@USERNAME</a></p>
+      </div>
+      <form id="lead-form" class="form" novalidate>
+        <label>Имя
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>Telegram или телефон
+          <input type="text" name="contact" required>
+        </label>
+        <label>Что хотите автоматизировать
+          <textarea name="task" rows="4" placeholder="Например: клиенты записываются через переписку, всё теряется"></textarea>
+        </label>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn--primary">Отправить заявку</button>
+        <p class="form__status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__row">
+    <span>© 2026 agently</span>
+    <a href="https://t.me/USERNAME">Telegram</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
