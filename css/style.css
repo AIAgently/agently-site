@@ -204,3 +204,11 @@ p { margin: 0; }
   .hero__grid { grid-template-columns: 1fr; }
   .gears-card { justify-self: center; max-width: 380px; }
 }
+.hero { overflow-x: clip; }
+@media (min-width: 861px) {
+  .gears-card {
+    width: clamp(400px, calc(50vw - 160px), 560px);
+    max-width: none;
+    transform: translate(clamp(0px, calc(50vw - 560px), 220px), -70px);
+  }
+}
