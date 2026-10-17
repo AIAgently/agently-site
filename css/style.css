@@ -70,6 +70,7 @@ p { margin: 0; }
 .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 13px; font-weight: 600; color: var(--accent); }
 .lead { font-size: 19px; color: var(--muted); max-width: 34em; }
 .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+.hero__note { font-size: 14px; color: var(--muted); margin-top: -8px; }
 
 /* Chat mockup */
 .chat {
