@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
@@ -38,28 +38,20 @@
         <p class="hero__note">Бесплатная консультация · 15 минут</p>
       </div>
 
-      <!-- Карточка процесса: что происходит с заявкой без участия человека -->
-      <div class="chat" aria-label="Пример автоматизированного процесса">
-        <div class="chat__head">
-          <span class="chat__avatar">a</span>
-          <div><b>Новая заявка</b><small>обработано автоматически</small></div>
-        </div>
-        <div class="chat__ticket">
-          <small>1 · Сайт</small>
-          <b>Клиент оставил заявку ✓</b>
-        </div>
-        <div class="chat__ticket">
-          <small>2 · Таблица</small>
-          <b>Карточка клиента создана ✓</b>
-        </div>
-        <div class="chat__ticket">
-          <small>3 · Команда</small>
-          <b>Менеджер получил уведомление ✓</b>
-        </div>
-        <div class="chat__ticket">
-          <small>4 · Клиент</small>
-          <b>Счёт на оплату отправлен ✓</b>
-        </div>
+      <!-- Шестерёнки: agently вращает оплаты, документы, отчёты и заявки -->
+      <div class="gears-card">
+        <svg id="heroGears" viewBox="0 0 460 420" role="img" aria-label="Сцепленные шестерёнки: центральная agently вращает оплаты, документы, отчёты и заявки">
+          <circle cx="215" cy="215" r="178" fill="#e3f3ea"/>
+          <circle cx="215" cy="215" r="150" fill="none" stroke="#b6cbbf" stroke-width="1.5" stroke-dasharray="3 7"/>
+          <g id="gears"></g>
+          <g id="gearIcons"></g>
+          <g font-family="Onest, system-ui, sans-serif" font-size="12" font-weight="600" fill="#15201b">
+            <rect x="318" y="58" width="82" height="26" rx="13" fill="#fff" stroke="#dde2dc"/><text x="359" y="75" text-anchor="middle">Оплаты</text>
+            <rect x="22" y="352" width="96" height="26" rx="13" fill="#fff" stroke="#dde2dc"/><text x="70" y="369" text-anchor="middle">Документы</text>
+            <rect x="350" y="290" width="82" height="26" rx="13" fill="#fff" stroke="#dde2dc"/><text x="391" y="307" text-anchor="middle">Отчёты</text>
+            <rect x="26" y="86" width="82" height="26" rx="13" fill="#fff" stroke="#dde2dc"/><text x="67" y="103" text-anchor="middle">Заявки</text>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
@@ -305,5 +297,55 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+/* Шестерёнки на первом экране */
+(() => {
+  const svg = document.getElementById('heroGears');
+  if (!svg) return;
+  const NS = 'http://www.w3.org/2000/svg', host = svg.getElementById ? svg.querySelector('#gears') : null, icons = svg.querySelector('#gearIcons');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const m = 6, h = 11;
+  function gearPath(t) {
+    const rp = t * m, ro = rp + h / 2, ri = rp - h / 2, step = Math.PI * 2 / t; let d = '';
+    for (let i = 0; i < t; i++) {
+      const a = i * step, pts = [[ri, a - step * .5], [ri, a - step * .28], [ro, a - step * .16], [ro, a + step * .16], [ri, a + step * .28]];
+      pts.forEach(([r, an], j) => { d += (i === 0 && j === 0 ? 'M' : 'L') + (r * Math.cos(an)).toFixed(2) + ' ' + (r * Math.sin(an)).toFixed(2) + ' '; });
+    }
+    const r = t * m * .45;
+    return d + `Z M ${r} 0 A ${r} ${r} 0 1 0 ${-r} 0 A ${r} ${r} 0 1 0 ${r} 0 Z`;
+  }
+  const mk = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+  const A = { t: 12, x: 205, y: 215, fill: '#15201b' };
+  const kids = [
+    { t: 7, ang: -40, fill: '#2aa86b', icon: 'rub' },
+    { t: 8, ang: 140, fill: '#ffffff', stroke: '#15201b', icon: 'doc' },
+    { t: 5, ang: 22, fill: '#8fd1ae', icon: 'chart' },
+    { t: 5, ang: -150, fill: '#ffffff', stroke: '#15201b', icon: 'mail' }
+  ];
+  kids.forEach(k => { const dist = (A.t + k.t) * m, r = k.ang * Math.PI / 180; k.x = A.x + dist * Math.cos(r); k.y = A.y + dist * Math.sin(r); });
+  [A, ...kids].forEach(g => { g.el = mk('path', { d: gearPath(g.t), fill: g.fill, 'fill-rule': 'evenodd', stroke: g.stroke || 'none', 'stroke-width': g.stroke ? 2.5 : 0, 'stroke-linejoin': 'round' }, host); });
+  mk('circle', { cx: A.x, cy: A.y, r: A.t * m * .45, fill: '#15201b' }, icons);
+  mk('text', { x: A.x, y: A.y + 4, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 700, fill: '#ffffff', 'font-family': 'Unbounded, sans-serif' }, icons).textContent = 'agently';
+  kids.forEach(k => {
+    mk('circle', { cx: k.x, cy: k.y, r: k.t * m * .45, fill: k.fill }, icons);
+    if (k.icon === 'rub') mk('text', { x: k.x, y: k.y + 8, 'text-anchor': 'middle', 'font-size': 22, 'font-weight': 700, fill: '#ffffff' }, icons).textContent = '₽';
+    if (k.icon === 'doc') { mk('rect', { x: k.x - 9, y: k.y - 12, width: 18, height: 24, rx: 3, fill: 'none', stroke: '#15201b', 'stroke-width': 2.2 }, icons); mk('rect', { x: k.x - 5, y: k.y - 5, width: 10, height: 2.4, rx: 1.2, fill: '#2aa86b' }, icons); mk('rect', { x: k.x - 5, y: k.y + 1, width: 8, height: 2.4, rx: 1.2, fill: '#2aa86b' }, icons); }
+    if (k.icon === 'chart') [[-8, 6], [-2, 11], [4, 16]].forEach(([dx, hh]) => mk('rect', { x: k.x + dx, y: k.y + 7 - hh, width: 4.5, height: hh, rx: 1, fill: '#15201b' }, icons));
+    if (k.icon === 'mail') { mk('rect', { x: k.x - 9, y: k.y - 6.5, width: 18, height: 13, rx: 2.5, fill: 'none', stroke: '#15201b', 'stroke-width': 2 }, icons); mk('path', { d: `M${k.x - 8} ${k.y - 5} L${k.x} ${k.y + 1} L${k.x + 8} ${k.y - 5}`, fill: 'none', stroke: '#15201b', 'stroke-width': 2 }, icons); }
+  });
+  function draw(phi) {
+    A.el.setAttribute('transform', `translate(${A.x} ${A.y}) rotate(${phi})`);
+    kids.forEach(k => { const ratio = A.t / k.t, rot = -ratio * phi + k.ang * (1 + ratio) + 180 / k.t; k.el.setAttribute('transform', `translate(${k.x.toFixed(2)} ${k.y.toFixed(2)}) rotate(${rot.toFixed(3)})`); });
+  }
+  draw(0);
+  if (reduce) return;
+  let raf = 0, last = 0, phi = 0;
+  const frame = now => { if (last) phi += (now - last) / 1000 * 24; last = now; draw(phi); raf = requestAnimationFrame(frame); };
+  const run = on => { cancelAnimationFrame(raf); last = 0; if (on) raf = requestAnimationFrame(frame); };
+  if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => run(e.isIntersecting)).observe(svg);
+  else run(true);
+})();
+</script>
+
 </body>
 </html>
