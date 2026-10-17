@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>agently — боты и мини-приложения для бизнеса</title>
-  <meta name="description" content="Автоматизируем малый бизнес: боты на n8n, Telegram Mini Apps, запись клиентов, оплаты, заявки в мессенджерах.">
+  <title>agently — автоматизация бизнеса</title>
+  <meta name="description" content="Автоматизируем бизнес: приём заявок, запись клиентов, оплаты, таблицы и отчёты, мини-приложения в Telegram и ИИ-ассистенты.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,28 +28,37 @@
   <section class="hero">
     <div class="wrap hero__grid">
       <div class="hero__text">
-        <p class="eyebrow">Автоматизация для малого бизнеса</p>
-        <h1>Заявки, запись и оплаты работают сами, пока вы заняты делом</h1>
-        <p class="lead">Делаем ботов на n8n и мини-приложения в Telegram. Клиент пишет в мессенджер, а вы получаете готовую заявку со всеми деталями.</p>
+        <p class="eyebrow">Автоматизация бизнеса</p>
+        <h1>Перестаньте тратить часы на то, что можно автоматизировать</h1>
+        <p class="lead">Находим процессы, которые отнимают у вас время, и автоматизируем их: приём заявок, запись клиентов, оплаты, таблицы и отчёты. Подключаем ИИ там, где он действительно экономит часы.</p>
         <div class="hero__actions">
-          <a href="#contact" class="btn btn--primary">Обсудить задачу</a>
+          <a href="#contact" class="btn btn--primary">Узнать, что можно автоматизировать</a>
           <a href="#cases" class="btn btn--ghost">Посмотреть кейсы</a>
         </div>
+        <p class="hero__note">Бесплатная консультация · 15 минут</p>
       </div>
 
-      <!-- Макет чата: показывает, что делает бот -->
-      <div class="chat" aria-label="Пример диалога с ботом">
+      <!-- Карточка процесса: что происходит с заявкой без участия человека -->
+      <div class="chat" aria-label="Пример автоматизированного процесса">
         <div class="chat__head">
           <span class="chat__avatar">a</span>
-          <div><b>Бот студии</b><small>онлайн</small></div>
+          <div><b>Новая заявка</b><small>обработано автоматически</small></div>
         </div>
-        <div class="msg msg--in">Здравствуйте! Хочу забронировать зал на субботу</div>
-        <div class="msg msg--out">Конечно. Какой зал и на сколько человек?</div>
-        <div class="msg msg--in">Семейный, нас четверо, часа на два</div>
-        <div class="msg msg--out">Записал. Передаю администратору, он подтвердит время в течение 15 минут ✓</div>
         <div class="chat__ticket">
-          <small>Заявка → группа администраторов</small>
-          <b>Семейный зал · сб · 4 чел · 2 ч</b>
+          <small>1 · Сайт</small>
+          <b>Клиент оставил заявку ✓</b>
+        </div>
+        <div class="chat__ticket">
+          <small>2 · Таблица</small>
+          <b>Карточка клиента создана ✓</b>
+        </div>
+        <div class="chat__ticket">
+          <small>3 · Команда</small>
+          <b>Менеджер получил уведомление ✓</b>
+        </div>
+        <div class="chat__ticket">
+          <small>4 · Клиент</small>
+          <b>Счёт на оплату отправлен ✓</b>
         </div>
       </div>
     </div>
@@ -60,19 +69,19 @@
       <h2>Что делаем</h2>
       <div class="services">
         <article class="service">
-          <p class="tag">n8n</p>
-          <h3>Боты и автоматизация</h3>
-          <p>Бот в Telegram, ВКонтакте, MAX или WhatsApp собирает заявку, отвечает на частые вопросы с помощью ИИ и передаёт клиента администратору.</p>
+          <p class="tag">Заявки</p>
+          <h3>Заявки и запись клиентов</h3>
+          <p>Заявки с сайта, из мессенджеров и соцсетей собираются в одном месте, и ни одна не теряется.</p>
           <ul>
-            <li>Приём и разбор заявок</li>
+            <li>Telegram, ВКонтакте, MAX, WhatsApp и сайт</li>
+            <li>Онлайн-запись на свободное время</li>
             <li>Уведомления команде</li>
-            <li>Связка с таблицами и CRM</li>
           </ul>
         </article>
         <article class="service">
           <p class="tag">Telegram Mini Apps</p>
           <h3>Мини-приложения в Telegram</h3>
-          <p>Полноценное приложение внутри Telegram: клиенту ничего не нужно скачивать.</p>
+          <p>Запись, каталог, корзина и личный кабинет внутри Telegram. Клиенту ничего не нужно скачивать.</p>
           <ul>
             <li>Онлайн-запись с выбором времени</li>
             <li>Меню или каталог с корзиной</li>
@@ -81,12 +90,42 @@
         </article>
         <article class="service">
           <p class="tag">Платежи</p>
-          <h3>Приём оплат</h3>
-          <p>Оплата через ЮKassa прямо в боте. После оплаты клиент сразу получает то, за что заплатил: доступ, запись или подтверждение.</p>
+          <h3>Оплаты и доступы</h3>
+          <p>Приём оплат онлайн и автоматическая выдача того, за что заплатил клиент: доступа, записи или подтверждения.</p>
           <ul>
             <li>Разовые платежи и подписки</li>
             <li>Доступ в закрытые каналы</li>
             <li>Чеки и уведомления</li>
+          </ul>
+        </article>
+        <article class="service">
+          <p class="tag">Данные</p>
+          <h3>Таблицы, CRM и отчёты</h3>
+          <p>Данные сами попадают в таблицы и CRM, отчёты приходят по расписанию.</p>
+          <ul>
+            <li>Учёт клиентов и заказов</li>
+            <li>Отчёты в Telegram или на почту</li>
+            <li>Напоминания о задачах</li>
+          </ul>
+        </article>
+        <article class="service">
+          <p class="tag">ИИ</p>
+          <h3>ИИ-ассистенты</h3>
+          <p>Отвечают на частые вопросы клиентов, разбирают документы и письма.</p>
+          <ul>
+            <li>Ответы клиентам круглосуточно</li>
+            <li>Разбор входящих заявок</li>
+            <li>Обработка документов</li>
+          </ul>
+        </article>
+        <article class="service">
+          <p class="tag">Интеграции</p>
+          <h3>Связка ваших сервисов</h3>
+          <p>Соединяем программы, которыми вы уже пользуетесь, чтобы данные не приходилось переносить вручную.</p>
+          <ul>
+            <li>CRM, таблицы и мессенджеры</li>
+            <li>Сервисы записи и оплаты</li>
+            <li>Обмен данными без ручной работы</li>
           </ul>
         </article>
       </div>
@@ -101,13 +140,13 @@
           <p class="tag">Фотостудия</p>
           <h3>Бот, который принимает заявки на бронирование</h3>
           <p>Клиенты пишут в Telegram, ВКонтакте, MAX, WhatsApp или в виджет на сайте. Бот уточняет зал, дату и количество гостей, собирает заявку и отправляет её в группу администраторов.</p>
-          <p class="case__stack">n8n · ИИ-ассистент · 4 мессенджера</p>
+          <p class="case__stack">ИИ-ассистент · 4 мессенджера · заявки администратору</p>
         </article>
         <article class="case">
           <p class="tag">Автор закрытого канала</p>
           <h3>Продажа доступа в канал через бота</h3>
           <p>Клиент оплачивает через ЮKassa и сразу получает одноразовую ссылку-приглашение. Автору не нужно вручную проверять платежи и добавлять людей.</p>
-          <p class="case__stack">Telegram-бот · ЮKassa · одноразовые ссылки</p>
+          <p class="case__stack">Приём оплат · автоматическая выдача доступа</p>
         </article>
       </div>
     </div>
@@ -130,7 +169,7 @@
       <div>
         <h2>Расскажите о задаче</h2>
         <p>Ответим в Telegram в течение дня и предложим, что можно автоматизировать.</p>
-              </div>
+      </div>
       <form id="lead-form" class="form" novalidate>
         <label>Имя
           <input type="text" name="name" required autocomplete="name">
@@ -152,7 +191,7 @@
 <footer class="footer">
   <div class="wrap footer__row">
     <span>© 2026 agently</span>
-        <div class="footer__team">
+    <div class="footer__team">
       <span>Наша команда:</span>
       <a href="https://t.me/qeenek" target="_blank" rel="noopener">@qeenek</a>
       <a href="https://t.me/sllboss" target="_blank" rel="noopener">@sllboss</a>
