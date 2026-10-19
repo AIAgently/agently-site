@@ -212,3 +212,9 @@ p { margin: 0; }
     transform: translate(clamp(0px, calc(50vw - 560px), 220px), -70px);
   }
 }
+
+/* Блок «Знакомо?»: разделитель на одном уровне во всех карточках */
+#why .case .case__stack { margin-top: 0; }
+@media (min-width: 861px) {
+  #why .case h3 { min-height: 2.4em; }
+}
