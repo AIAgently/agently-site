@@ -218,19 +218,3 @@ p { margin: 0; }
 @media (min-width: 861px) {
   #why .case h3 { min-height: 2.4em; }
 }
-
-/* Стрелки между шагами «Как работаем» (только десктоп, где шаги в один ряд) */
-@media (min-width: 861px) {
-  .steps li { position: relative; }
-  .steps li:not(:first-child)::after {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -14px;
-    width: 9px;
-    height: 9px;
-    border-top: 3px solid var(--accent);
-    border-right: 3px solid var(--accent);
-    transform: rotate(45deg);
-  }
-}
