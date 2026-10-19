@@ -330,7 +330,7 @@
   });
   function draw(phi) {
     A.el.setAttribute('transform', `translate(${A.x} ${A.y}) rotate(${phi})`);
-    kids.forEach(k => { const ratio = A.t / k.t, rot = -ratio * phi + k.ang * (1 + ratio) + 180 / k.t; k.el.setAttribute('transform', `translate(${k.x.toFixed(2)} ${k.y.toFixed(2)}) rotate(${rot.toFixed(3)})`); });
+    kids.forEach(k => { const ratio = A.t / k.t, rot = -ratio * phi + k.ang * (1 + ratio) + 180 - 180 / k.t; k.el.setAttribute('transform', `translate(${k.x.toFixed(2)} ${k.y.toFixed(2)}) rotate(${rot.toFixed(3)})`); });
   }
   draw(0);
   if (reduce) return;
