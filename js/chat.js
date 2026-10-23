@@ -148,5 +148,10 @@
   input.addEventListener('input', autosize);
   input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(input.value); } });
   panel.addEventListener('click', e => { const a = e.target.closest('a[href="#contact"]'); if (a) open(false); });
+  // Прячем кнопку чата, пока на экране блок про ассистента: у него своя кнопка
+  const demo = document.querySelector('.ai-demo');
+  if (demo && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => root.classList.toggle('is-tucked', e.isIntersecting), { threshold: 0.15 }).observe(demo);
+  }
   document.querySelectorAll('[data-open-chat]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); open(true); }));
 })();
