@@ -51,3 +51,7 @@
 .ai-demo p:not(.tag) { margin: 0; color: #b7c4bc; max-width: 46em; }
 .ai-demo .btn { flex: none; }
 @media (max-width: 600px) { .ai-demo { padding: 24px 20px; } .ai-demo .btn { width: 100%; text-align: center; } }
+
+/* Кнопка чата прячется, пока виден блок про ассистента */
+.chatw__launch { transition: transform .25s ease, opacity .25s ease; }
+.chatw.is-tucked:not(.is-open) .chatw__launch { opacity: 0; transform: translateY(16px); pointer-events: none; }
